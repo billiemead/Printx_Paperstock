@@ -1,8 +1,10 @@
+# PrintX Magento
+## WEB-TO-PRINT Print MAGENTO 1.9 XTENSIONS
 
-PrintX Magento
-WEB-TO-PRINT XTENSIONS
+[![Build Status](printx_paperstock.png)]
 
-Printx_Paperstock - Choose and select paperstock
+Documentation is available online at
+http://magento.printxinc.com/documentation
 
 PrintX Development Studios
 <a href='http://printxinc.com'>printxinc.com</a>
