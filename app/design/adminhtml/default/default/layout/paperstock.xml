@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <paperstock_adminhtml_paperstockbackend_index>
+	<reference name="content">
+	  <block type="paperstock/adminhtml_paperstockbackend" name="paperstockbackend" template="paperstock/paperstockbackend.phtml"/>
+	</reference>
+  </paperstock_adminhtml_paperstockbackend_index>
+  <paperstock_adminhtml_paperstock_index>
+	<reference name="content">
+	  <block type="paperstock/adminhtml_paperstock" name="paperstock" />
+	</reference>
+  </paperstock_adminhtml_paperstock_index>
+</layout>

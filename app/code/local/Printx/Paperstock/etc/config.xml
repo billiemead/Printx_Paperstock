@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Printx_Paperstock>
+      <version>0.1.0</version>
+    </Printx_Paperstock>
+  </modules>
+  <global>
+    <helpers>
+      <paperstock>
+        <class>Printx_Paperstock_Helper</class>
+      </paperstock>
+    </helpers>
+	<blocks>
+	  <paperstock>
+		<class>Printx_Paperstock_Block</class>
+	  </paperstock>
+	</blocks>
+	<models>
+	  <paperstock>
+		<class>Printx_Paperstock_Model</class>
+		<resourceModel>paperstock_mysql4</resourceModel>
+	  </paperstock>
+	  <paperstock_mysql4>
+		<class>Printx_Paperstock_Model_Mysql4</class>
+		<entities>		  
+			  <paperstock>
+				<table>paperstock</table>
+			  </paperstock>
+        </entities>
+	  </paperstock_mysql4>
+	</models>
+	<resources>
+	  <paperstock_setup>
+		<setup>
+		  <module>Printx_Paperstock</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </paperstock_setup>
+	  <paperstock_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </paperstock_write>
+	  <paperstock_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </paperstock_read>
+	</resources>
+  </global>
+  <admin>
+	<routers>
+	  <paperstock>
+	    <use>admin</use>
+		<args>
+		  <module>Printx_Paperstock</module>
+		  <frontName>admin_paperstock</frontName>
+		</args>
+	  </paperstock>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <paperstock module="paperstock">
+		<title>Paperstock</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <paperstockbackend module="paperstock">
+			<title>Manage Paperstock</title>
+			<sort_order>0</sort_order>
+			<action>admin_paperstock/adminhtml_paperstockbackend</action>
+		  </paperstockbackend>
+		  <paperstock module="paperstock">
+		    <title>Manage Paperstock</title>
+			<sort_order>0</sort_order>
+			<action>admin_paperstock/adminhtml_paperstock</action>
+		  </paperstock>
+		</children>
+	  </paperstock>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<paperstock translate="title" module="paperstock">
+			  <title>Paperstock</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <paperstockbackend translate="title">
+			<title>Manage Paperstock</title>
+		  </paperstockbackend>
+		  <paperstock translate="title">
+			<title>Manage Paperstock</title>
+			<sort_order>0</sort_order>
+		  </paperstock>
+			  </children>
+			</paperstock>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<paperstock>
+		  <file>paperstock.xml</file>
+		</paperstock>
+	  </updates>
+	</layout>
+  </adminhtml>
+</config> 
